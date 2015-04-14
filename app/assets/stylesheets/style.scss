@@ -1,0 +1,55 @@
+htlm,body{
+	margin: 0px;
+	font-family: 'Roboto', sans-serif;
+	/*background-color: #F4F4F4;*/
+}
+.btn{
+	background-color: inherit;
+	border: none;
+	outline: none;
+	text-transform: uppercase;
+	cursor: pointer;
+	font-size: 1.2em;
+	padding: 10px 12px;
+	color: white;
+}
+.red{
+	color: rgb(214, 44, 40) !important; 
+}
+a,a:visited{
+	color: inherit !important;
+	text-decoration: none;
+}
+.logo{
+	font-size: 1.2em;
+}
+.no-margin{
+	margin: 0px;
+}
+.be-black{
+	background-color: rgb(51, 51, 51);
+}
+.be-red{
+	background-color: rgb(214, 44, 40);
+}
+.white{
+	color: white;
+}
+.large-padding{
+	padding: 8px 5px;
+}
+.field,.top-space,.actions{
+	margin-top: 1em;
+}
+.text-left{
+	text-align: left;
+}
+.form-control{
+	border: none;
+	border-bottom: 1px solid;
+	outline: none;
+	width: 100%;
+	display: block;
+	padding: 10px 0px;
+	font-size:  1.2em;
+}
