@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   before_action :set_article
   before_action :authenticate_user!
 
-  respond_to :html
+  respond_to :html, :json
 
   def create
     @comment = current_user.comments.new(comment_params)
