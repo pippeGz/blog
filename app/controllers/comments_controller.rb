@@ -1,9 +1,12 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:update, :destroy]
+  before_action :set_comment, only: [:update, :destroy,:show]
   before_action :set_article
   before_action :authenticate_user!
 
   respond_to :html, :json
+
+  def show
+  end
 
   def create
     @comment = current_user.comments.new(comment_params)

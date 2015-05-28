@@ -2,14 +2,23 @@
 <% unless @article.user.nil? %>
 	<p>
 		Escrito por: <%= @article.user.email %>
-	</p>		
+	</p>
 <%end%>
+<div class="field">
+	<% @article.categories.each do |category| %>
+		<%= link_to category.name, category,style:"color:#{category.color};" %>
+	<%end%>
+</div>
+<div class="field">
+	<%= image_tag @article.cover.url(:medium) %>
+</div>
 <p>
 	<%= @article.visits_count %> Visitas
 </p>
 <div>
 	<%= @article.body %>
 </div>
+
 <div class="field">
 	<h3>Comentarios</h3>
 	<%= render "comments/form" %>
@@ -17,7 +26,7 @@
 		<% @article.comments.each do |comment| %>
 			<li>
 				<%= comment.body %> - <%= comment.user.email %>
-			</li>	
+			</li>
 		<%end%>
 	</ul>
 </div>

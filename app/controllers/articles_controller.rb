@@ -1,12 +1,13 @@
 class ArticlesController < ApplicationController
 	before_action :authenticate_user!, except: [:show,:index]
 	before_action :set_article, except: [:index,:new,:create]
-
+	before_action :authenticate_editor!, only: [:new,:create,:update]
+	before_action :authenticate_admin!, only: [:destroy]
 	#GET /articles
 	def index
-		# Todos los registros SELECT * FROM 
+		# Todos los registros SELECT * FROM
 		@articles = Article.all
-	end	
+	end
 	#GET /articles/:id
 	def show
 		@article.update_visits_count
@@ -15,6 +16,7 @@ class ArticlesController < ApplicationController
 	#GET /articles/new
 	def new
 		@article = Article.new
+		@categories = Category.all
 	end
 
 	def edit
@@ -23,7 +25,7 @@ class ArticlesController < ApplicationController
 	#POST /articles
 	def create
 		@article = current_user.articles.new(article_params)
-
+		@article.categories = params[:categories]
 		if @article.save
 			redirect_to @article
 		else
@@ -33,7 +35,7 @@ class ArticlesController < ApplicationController
 	#DELETE /artiles/:id
 	def destroy
 		@article.destroy #elimina el objeto de la BD
-		redirect_to articles_path	
+		redirect_to articles_path
 	end
 	#PUT /articles/:id
 	def update
@@ -47,10 +49,10 @@ class ArticlesController < ApplicationController
 	private
 
 	def set_article
-		@article = Article.find(params[:id])		
+		@article = Article.find(params[:id])
 	end
 
 	def article_params
-		params.require(:article).permit(:title,:body)
+		params.require(:article).permit(:title,:body,:cover,:categories)
 	end
 end
