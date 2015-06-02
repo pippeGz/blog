@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    aasm (4.1.1)
     actionmailer (4.2.1)
       actionpack (= 4.2.1)
       actionview (= 4.2.1)
@@ -160,6 +161,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  aasm
   coffee-rails (~> 4.0.0)
   coffee-script-source (= 1.8.0)
   devise
