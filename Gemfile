@@ -32,7 +32,9 @@ gem 'paperclip'
 
 gem 'aasm'
 
-gem 'will_paginate' 
+gem 'will_paginate'
+
+gem 'epic-editor-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

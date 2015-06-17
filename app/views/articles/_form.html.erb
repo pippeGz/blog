@@ -1,6 +1,6 @@
 <% name ||="Crear" %>
 <h1><%= name %> artículo</h1>
-<%= form_for(@article) do |f| %>
+<%= form_for(@article,html:{ id: "articles_form" }) do |f| %>
 	<% @article.errors.full_messages.each do |message| %>
 		<div class="be-red white top-space">
 			*<%= message %>
@@ -13,7 +13,8 @@
 		Portada: <%= f.file_field :cover %>
 	</div>
 	<div class="field">
-		<%= f.text_area :body, placeholder: "Escribe aquí el nuevo artículo", style:"height:300px", class:"form-control" %>
+		<%= f.hidden_field :body, id:"body-textarea" %>
+		<div id="epiceditor" style="height:250px;"></div>
 	</div>
 	<div class="field">
 		<label>Categorías</label>
@@ -27,3 +28,17 @@
 		<%= f.submit "Guardar", class:"btn be-red" %>
 	</div>
 <%end%>
+<script>
+	var editor = new EpicEditor({
+		file:{
+			name:"nuevo_articulo"
+		}
+	});
+
+	editor.load();
+
+	$("#articles_form").on("submit",function(){
+		$("#body-textarea").val( editor.exportFile("nuevo_articulo", "html") );
+	});
+
+</script>

@@ -16,7 +16,7 @@
 	<%= @article.visits_count %> Visitas
 </p>
 <div>
-	<%= @article.body %>
+	<%= @article.body.html_safe %>
 </div>
 
 <div class="field">
