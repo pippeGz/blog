@@ -36,6 +36,8 @@ gem 'will_paginate'
 
 gem 'epic-editor-rails'
 
+gem 'sanitize'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

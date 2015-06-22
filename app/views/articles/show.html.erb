@@ -16,7 +16,7 @@
 	<%= @article.visits_count %> Visitas
 </p>
 <div>
-	<%= @article.body.html_safe %>
+	<%= Sanitize.fragment(@article.body, Sanitize::Config::RELAXED).html_safe %>
 </div>
 
 <div class="field">
