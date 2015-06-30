@@ -1,9 +1,10 @@
-<h1>Esta es la pagina que muestra los articulos</h1>
-
-<% @articles.each do |article| %>
-	<h1><%= link_to article.title, article %></h1>
-	<div>
-		<%= article.body %>
-	</div>
-<%end%>
-<%= will_paginate @articles %>
+<div class="container" style="margin:0 auto;">
+	<h1>Articulos</h1>
+		<div class="row">
+			<%= render @articles %>
+		</div>
+		<div class="top-space text-center">
+			<%= will_paginate @articles %>		
+		</div>
+	
+</div>

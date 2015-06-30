@@ -35,6 +35,10 @@ a,a:visited{
 .be-red{
 	background-color: rgb(214, 44, 40);
 }
+.background-cover{
+	background-position:center;
+	background-size:cover;
+}
 .white{
 	color: white;
 }
@@ -44,8 +48,20 @@ a,a:visited{
 .field,.top-space,.actions{
 	margin-top: 1em;
 }
+.text-center{
+	text-align:center;
+}
 .text-left{
 	text-align: left;
+}
+.article-height{
+	height:150px;
+}
+.relative{
+	position:relative;
+}
+.absolute{
+	position:absolute;
 }
 .form-control{
 	border: none;

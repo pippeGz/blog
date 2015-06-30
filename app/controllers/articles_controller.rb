@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
 	#GET /articles
 	def index
 		# Todos los registros SELECT * FROM
-		@articles = Article.paginate(page: params[:page],per_page:5).publicados.ultimos
+		@articles = Article.paginate(page: params[:page],per_page:10).publicados.ultimos
 	end
 	#GET /articles/:id
 	def show
