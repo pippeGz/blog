@@ -16,6 +16,18 @@ htlm,body{
 .red{
 	color: rgb(214, 44, 40) !important;
 }
+.be-big{
+	font-size:2em;
+}
+.be-small{
+	font-size:12px;
+}
+.bottom-space{
+	margin-bottom:2em;
+}
+.underline{
+	text-decoration:underline;
+}
 .blue{
 	color: blue !important;
 }
@@ -39,6 +51,9 @@ a,a:visited{
 	background-position:center;
 	background-size:cover;
 }
+.grey{
+	color:#616161;
+}
 .white{
 	color: white;
 }
@@ -48,11 +63,17 @@ a,a:visited{
 .field,.top-space,.actions{
 	margin-top: 1em;
 }
+.text-justify{
+	text-align:justify;
+}
 .text-center{
 	text-align:center;
 }
 .text-left{
 	text-align: left;
+}
+.text-right{
+	text-align:right;
 }
 .article-height{
 	height:150px;
